@@ -200,3 +200,106 @@ os.environ["DATABASE_URL"] = f"mysql+pymysql://root:{password}@localhost/animal_
 #     FOREIGN KEY (animal_id) REFERENCES Animal(animal_id),
 #     FOREIGN KEY (location_id) REFERENCES Location(location_id)
 # );
+
+# %% language="sql"
+#
+# #triggers to enforce that the years in tables cannot be in the future
+#
+# CREATE TRIGGER IF NOT EXISTS trg_endangerment_insert
+# BEFORE INSERT ON Endangerment_of_Animal
+# FOR EACH ROW
+# BEGIN
+#     IF NEW.effect_year > YEAR(CURDATE()) THEN
+#         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'effect_year cannot be in the future';
+#     END IF;
+# END;
+
+# %% language="sql"
+# CREATE TRIGGER IF NOT EXISTS trg_endangerment_update
+# BEFORE UPDATE ON Endangerment_of_Animal
+# FOR EACH ROW
+# BEGIN
+#     IF NEW.effect_year > YEAR(CURDATE()) THEN
+#         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'effect_year cannot be in the future';
+#     END IF;
+# END;
+
+# %% language="sql"
+# CREATE TRIGGER IF NOT EXISTS trg_population_insert
+# BEFORE INSERT ON Population_of_Animal
+# FOR EACH ROW
+# BEGIN
+#     IF NEW.population_year > YEAR(CURDATE()) THEN
+#         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'population_year cannot be in the future';
+#     END IF;
+# END;
+
+# %% language="sql"
+# CREATE TRIGGER IF NOT EXISTS trg_population_update
+# BEFORE UPDATE ON Population_of_Animal
+# FOR EACH ROW
+# BEGIN
+#     IF NEW.population_year > YEAR(CURDATE()) THEN
+#         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'population_year cannot be in the future';
+#     END IF;
+# END;
+
+# %% language="sql"
+# CREATE TRIGGER IF NOT EXISTS trg_disaster_insert
+# BEFORE INSERT ON Natural_Disaster
+# FOR EACH ROW
+# BEGIN
+#     IF NEW.disaster_year > YEAR(CURDATE()) THEN
+#         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'disaster_year cannot be in the future';
+#     END IF;
+# END;
+
+# %% language="sql"
+# CREATE TRIGGER IF NOT EXISTS trg_disaster_update
+# BEFORE UPDATE ON Natural_Disaster
+# FOR EACH ROW
+# BEGIN
+#     IF NEW.disaster_year > YEAR(CURDATE()) THEN
+#         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'disaster_year cannot be in the future';
+#     END IF;
+# END;
+
+# %% language="sql"
+# CREATE TRIGGER IF NOT EXISTS trg_development_insert
+# BEFORE INSERT ON Urban_Development
+# FOR EACH ROW
+# BEGIN
+#     IF NEW.development_year > YEAR(CURDATE()) THEN
+#         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'development_year cannot be in the future';
+#     END IF;
+# END;
+
+# %% language="sql"
+# CREATE TRIGGER IF NOT EXISTS trg_development_update
+# BEFORE UPDATE ON Urban_Development
+# FOR EACH ROW
+# BEGIN
+#     IF NEW.development_year > YEAR(CURDATE()) THEN
+#         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'development_year cannot be in the future';
+#     END IF;
+# END;
+
+# %% language="sql"
+# CREATE TRIGGER IF NOT EXISTS trg_outbreak_insert
+# BEFORE INSERT ON Disease_Outbreaks
+# FOR EACH ROW
+# BEGIN
+#     IF NEW.outbreak_year > YEAR(CURDATE()) THEN
+#         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'outbreak_year cannot be in the future';
+#     END IF;
+# END;
+
+# %% language="sql"
+# CREATE TRIGGER IF NOT EXISTS trg_outbreak_update
+# BEFORE UPDATE ON Disease_Outbreaks
+# FOR EACH ROW
+# BEGIN
+#     IF NEW.outbreak_year > YEAR(CURDATE()) THEN
+#         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'outbreak_year cannot be in the future';
+#     END IF;
+# END;

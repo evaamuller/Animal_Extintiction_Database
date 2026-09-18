@@ -34,6 +34,8 @@ os.environ["DATABASE_URL"] = f"mysql+pymysql://root:{password}@localhost/animal_
 # ('Great Victoria Desert', 'Desert', 424400.00, 'VI'),
 # ('Murray-Darling Basin', 'Wetland', 1061469.00, 'V');
 #
+
+# %% language="sql"
 # # 2. Animal
 # INSERT INTO Animal (genus_name, species_name, common_name, animal_class, diet, native) VALUES
 # ('Phascolarctos', 'cinereus', 'Koala', 'Mammalia', 'Herbivore', TRUE),
@@ -51,7 +53,8 @@ os.environ["DATABASE_URL"] = f"mysql+pymysql://root:{password}@localhost/animal_
 # ('Panthera', 'tigris', 'Bengal Tiger', 'Mammalia', 'Carnivore', FALSE),
 # ('Vulpes', 'vulpes', 'Red Fox', 'Mammalia', 'Omnivore', FALSE),
 # ('Oryctolagus', 'cuniculus', 'European Rabbit', 'Mammalia', 'Herbivore', FALSE);
-#
+
+# %% language="sql"
 # # 3. Endangerment_of_Animal
 # # (animal_id references the insert order above, 1-15)
 # INSERT INTO Endangerment_of_Animal (animal_id, effect_year, level) VALUES
@@ -68,6 +71,8 @@ os.environ["DATABASE_URL"] = f"mysql+pymysql://root:{password}@localhost/animal_
 # (12, 1982, 'EX'),  # Thylacine - Extinct
 # (13, 2010, 'EN');  # Bengal Tiger
 #
+
+# %% language="sql"
 # # 4. Predator_and_Prey
 # INSERT INTO Predator_and_Prey (animal_id_predator, animal_id_prey) VALUES
 # (8, 1),   # Wedge-tailed Eagle preys on Koala (joeys, rare)
@@ -78,7 +83,6 @@ os.environ["DATABASE_URL"] = f"mysql+pymysql://root:{password}@localhost/animal_
 # (12, 4),  # Thylacine preys on Wombat (historic)
 # (14, 6),  # Red Fox preys on Emu chicks
 # (14, 15); # Red Fox preys on Rabbit
-#
 
 # %% language="sql"
 #
@@ -167,3 +171,15 @@ os.environ["DATABASE_URL"] = f"mysql+pymysql://root:{password}@localhost/animal_
 # (10, 2),
 # (11, 5), (11, 1),
 # (15, 8);
+
+# %% language="sql"
+#
+# UPDATE Population_of_Animal
+# SET population_size = 9500
+# WHERE animal_id = 1 AND location_id = 1 AND population_year = 2020;
+#
+
+# %% language="sql"
+#
+# DELETE FROM Disease_Outbreaks
+# WHERE outbreak_id = 6;
