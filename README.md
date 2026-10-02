@@ -44,10 +44,10 @@ To run and interact with this database, following software and packages are requ
 ## 6. Data Sources
 
 ## 7. Supporting files
-- Definition of the problem [Problem Statement](Supporting files\Societal problem definition.pdf)
-- Entity Relationship Diagram that defines the schema [ERD](Supporting files\ERD.pdf)
-- Data Modelling explains modeling choces and noramilsation [Data Modeling] (Supporting files\Data Modelling.pdf)
-- Pitch Video [Pitch](Supporting files\Animal Extinction Video.mov)
+- Definition of the problem [Problem Statement](Supporting%20files/Societal%20problem%20definition.pdf)
+- Entity Relationship Diagram that defines the schema [ERD](Supporting%20files/ERD.pdf)
+- Data Modelling explains modeling choices and normalisation [Data Modeling](Supporting%20files/Data%20Modelling.pdf)
+- Pitch Video [Pitch](Supporting%20files/Animal%20Extinction%20Video.mov)
 
 ## 8. Authors
 - **Irina Iacob**
