@@ -33,13 +33,15 @@ To run and interact with this database, following software and packages are requ
 - Connect the database to the notebook with your MySQL credentials
 
 ## 5. Usage
-- Three parts are provided:
+- Four parts are provided:
     1) [DB_Definition](SQL/DB_Definition.ipynb)
         - Notebook where the entities are created along with constraints and triggers
     2) [DB_Interaction](SQL/DB_Interaction.ipynb)
-        - Notebook intended for adding and modifying data
+        - Notebook intended for adding and modifying data mock data
     3) [DB_Queries](SQL/DB_Queries.ipynb)
         - Code for database querying
+    4) [Data_Insertion](SQL/Data_Insertion.ipynb)
+        - Notebook intended for adding and modifying data mock data
 
 ## 6. Data Sources
 
