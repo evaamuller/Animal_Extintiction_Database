@@ -34,11 +34,11 @@ To run and interact with this database, following software and packages are requ
 
 ## 5. Usage
 - Three parts are provided:
-    1) [DB_Definition](./DB_Definition.ipynb)
+    1) [DB_Definition](SQL/DB_Definition.ipynb)
         - Notebook where the entities are created along with constraints and triggers
-    2) [DB_Interaction](./DB_Interaction.ipynb)
-        - Notebook indented for adding and modifying data
-    3) [DB_Queries](./DB_Queries.ipynb)
+    2) [DB_Interaction](SQL/DB_Interaction.ipynb)
+        - Notebook intended for adding and modifying data
+    3) [DB_Queries](SQL/DB_Queries.ipynb)
         - Code for database querying
 
 ## 6. Data Sources
