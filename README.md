@@ -33,7 +33,7 @@ To run and interact with this database, following software and packages are requ
 - Connect the database to the notebook with your MySQL credentials
 
 ## 5. Usage
-- Four parts are provided:
+- Six parts are provided:
     1) [DB_Definition](SQL/DB_Definition.ipynb)
         - Notebook where the entities are created along with constraints and triggers
     2) [DB_Interaction](SQL/DB_Interaction.ipynb)
@@ -42,6 +42,11 @@ To run and interact with this database, following software and packages are requ
         - Code for database querying
     4) [Data_Insertion](SQL/Data_Insertion.ipynb)
         - Notebook intended for adding and modifying data
+    5) [threatened_species_preprocessing](SQL/threatened_species_preprocessing.ipynb)
+        - Procesing of [Threatened Species State Lists](Data/Threatened_Species_State_Lists.csv)
+    6) [tsx_preprocessing](SQL/tsx_preprocessing.ipynb)
+        - Procesing of [TSC dataset](Data/tsx.csv)
+    
 
 ## 6. Data Sources
 
