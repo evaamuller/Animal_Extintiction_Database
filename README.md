@@ -1,62 +1,76 @@
 # Animal Extinction Database
 
-## 1. Overview
+## Project Overview
 - The Database is modelling the relationships between variables tied to Animal Extinction in Australia.
 - Motivation behind this database was to assemble together information that could inform stakeholders about the possible causes of extinction of particular animals and to track the numbers and development or such species in time.
 
-## 2. Database Schema
-- The database models the following entities that were indentified to be connected to the issues based on available literature.
-  - Animal
-  - Location
-  - Endangerment_of_Animal
-  - Population_of_Animal
-  - Predator_and_Prey
-  - Climate
-  - Natural_Disaster
-  - Urban_Development
-  - Diseases
-  - Disease_Outbreaks
-  - Location_Of_Animal
-- Multiple CHECK constraints are applied throughout the database definition to ensure basic logic is complied with. For example we ensure the years fall into a specific time frame we found reasonable in the given context or that for example population of an animal is not a negative number.
+Tasks that were conducted each week are recorded in the table below with corresponding files.
 
-## 3. Tech Stack
-To run and interact with this database, following software and packages are required:
-- MySQL
-- Python (pymysql / JupySQL)
-- Jupyter Notebook
-- dotenv library was used to hide sql credentials
+| Week | Task | Outcome |
+|----------|----------|----------|
+| 1    | Problem definition | [sociental_problem_definition](docs/societal_problem_definition.pdf)|
+| 2    | Schema definition - defining the entities, attributes, PKs, FKs, normalization to 3NF | [ERD](docs/erd.pdf) [normalization](docs/normalization.pdf)|
+| 3    | Database implementation in code - definition and example queries | see directory [sql](sql)|
+| 4    | Stakeholder video | [pitch_video](docs/pitch_video.mov)|
+| 5    | Real data integration - finding, cleaning and inserting data | see [data](data) for .csv files and [data_info](data/datasets_info.md) for information about the datasets; [tsx_preprocess](sql/tsx_preprocessing.ipynb) and [tssl_preprocess](data/raw/threatened_species_state_lists.csv) for files cleaning and transforming the datasets; and [data_insertion](sql/data_insertion.ipynb) for actual data insertion into the database |
+| 6    | Feedback implementation, additional queries | [feedback](docs/feedback_implementation.md) |
 
-## 4. Setup / Installation
-- Install prerequisites (MySQL server, Python version)
-- Clone the repo
-- Set up your own local database on MySQL 
-- Connect the database to the notebook with your MySQL credentials
+## Files
+### sql:
+- `sql/db_definition.ipynb` - Defines the database schema in code, implements constraints and triggers
+- `sql/db_interaction.ipynb` - Inserts mock data and showcases a few interactions with the database - UPDATE, INSERT, DELETE queries
+- `sql/db_queries.ipynb` - Example SELECT queries
+- `sql/data_insertion.ipynb` - Insertion of the real world data
+- `sql/threatened_species_preprocessing.ipynb` - Preprocessing of the tssl dataset
+- `sql/tsx_preprocessing.ipynb` - Preprocessing of the tsx dataset
 
-## 5. Usage
-- Six parts are provided:
-    1) [DB_Definition](SQL/DB_Definition.ipynb)
-        - Notebook where the entities are created along with constraints and triggers
-    2) [DB_Interaction](SQL/DB_Interaction.ipynb)
-        - Notebook intended for adding and modifying mock data
-    3) [DB_Queries](SQL/DB_Queries.ipynb)
-        - Code for database querying
-    4) [Data_Insertion](SQL/Data_Insertion.ipynb)
-        - Notebook intended for adding and modifying data
-    5) [threatened_species_preprocessing](SQL/threatened_species_preprocessing.ipynb)
-        - Procesing of [Threatened Species State Lists](Data/Threatened_Species_State_Lists.csv)
-    6) [tsx_preprocessing](SQL/tsx_preprocessing.ipynb)
-        - Procesing of [TSC dataset](Data/tsx.csv)
+### data:
+- `data/datasets_info.md` - infromation about the real-world datasets - sources, what they contain, what data was used and justification why they are disjoint
+- `data/raw/tsx.cs` - raw tsx data
+- `data/raw/threatened_species_state_lists.csv` - raw tssl data
+- `data/processed/tsx_cleaned.csv` - preprocessed txs dataset that includes only the data relevant to our database
+- `data/processed/threatened_species_state_lists_cleaned.csv` - preprocessed tssl dataset
+
+### supporting files:
+- `docs/societal_problem_definition.pdf` - Defines the problem the database is addresing, the scope and the stakeholders
+- `docs/erd.pdf` - Schema definition
+- `docs/normalization.pdf` - Records our normalization procedure and provides further description of the modeled entities
+- `docs/pitch_video.mov` - Stakeholder video that describes the project in a non-technical way
+- `docs/feedback_implementation.md` - Records changes made based on the feedback our group received
+- `docs/limitations_future_work.md` - Addresses limitations of the currect state of this database and outlines intended future improvements
+- `docs/recorded_changes.md`- Comments on the changes made to the schema and addresses normalization after the insertion the real-world data 
+
+## How to run / reconstruct the database
+
+**Requirements**
+- Python <version 3.13> and Jupyter (VS Code with the Jupyter extension works)
+- MySQL - check for appropriate version for your OS: here developed and tested with MySQL 26.7.0 on macOS
+- Python packages: `pandas`, <database connector, e.g. `mysql-connector-python`> (install with `pip install -r requirements.txt`)
+
+**Steps**
+
+Run the notebooks in this order. Each step depends on the previous one:
+
+1. `sql/db_definition.ipynb`: creates the database and tables
+2. `sql/db_interaction.ipynb`: inserts the mock data into the tables
+3. `sql/data_insertion.ipynb`: loads the cleaned data from `data/processed/` into the database.
+4. `sql/db_queries.ipynb`: executes example queries
+
+**Configuration**
+
+Before running, set your database connection details (host, user, password, database name) in the first cell of EACH notebook.
+
+**Resetting**
+`db_definition.ipynb` drops the tables and recreates the `<animal_extinction_db>` database, so you can start over by running it again.
     
+## Data Sources
+Mock data was generated by Claude AI.
+For details on real-world data sources please see [datasets_info](data/datasets_info.md).
 
-## 6. Data Sources
+## How we worked
+All authors contributed comparably to the project. We had issues with version control with Jupyter notebook files and thus, we mostly worked together in person and uploaded everything at once. We do recognize that this is not ideal and in the future we would ensure that we have everything set up correctly.
 
-## 7. Supporting files
-- Definition of the problem [Problem Statement](Supporting%20files/Societal%20problem%20definition.pdf)
-- Entity Relationship Diagram that defines the schema [ERD](Supporting%20files/ERD.pdf)
-- Data Modelling explains modeling choices and normalisation [Data Modeling](Supporting%20files/Data%20Modelling.pdf)
-- Pitch Video [Pitch](Supporting%20files/Animal%20Extinction%20Video.mov)
-
-## 8. Authors
+## Authors
 - **Irina Iacob**
 - **Klára Albertová**
 - **Eva Artemis Müller**
