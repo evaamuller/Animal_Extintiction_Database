@@ -34,7 +34,7 @@ The dataset contains:
 2) Per value the data cointains: scientific name, common name, threatened status, genus, species, subspecies, class, family, and a Yes/- column for each state or territory where it occurs.
 
 ## Dataset properties
-After cleaning the datasets and identifying relevant data (see [data_insertion](sql/data_insertion.ipynb)) following properties were identified:
+After cleaning the datasets and identifying relevant data (see [data_insertion](/sql/data_insertion.ipynb)) following properties were identified:
 
 | Dataset             | TSX                                                                  | TSSL                                                                                                  |
 |---------------------|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
