@@ -2,7 +2,7 @@
 
 2 data sources were identified to be inserted into our database.
 
-Both of the datasets were preprocessed and converted to "cleaned" .csv files to only include data relevant to our database and in the correct format to avoid conflicts with our schema - see [TSSL_preprocessing](sql/threatened_species_preprocessing.ipynb) and [TSX_preprocessing](sql/tsx_preprocessing.ipynb) for details.
+Both of the datasets were preprocessed and converted to "cleaned" .csv files to only include data relevant to our database and in the correct format to avoid conflicts with our schema - see [TSSL_preprocessing](/sql/threatened_species_preprocessing.ipynb) and [TSX_preprocessing](/sql/tsx_preprocessing.ipynb) for details.
 
 ## TSX dataset
 
