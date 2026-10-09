@@ -12,7 +12,7 @@ Tasks that were conducted each week are recorded in the table below with corresp
 | 2    | Schema definition - defining the entities, attributes, PKs, FKs, normalization to 3NF | [ERD](docs/erd.pdf) [normalization](docs/normalization.pdf)|
 | 3    | Database implementation in code - definition and example queries | see directory [sql](sql)|
 | 4    | Stakeholder video | [pitch_video](docs/pitch_video.mov)|
-| 5    | Real data integration - finding, cleaning and inserting data | see [data](data) for .csv files and [data_info](data/datasets_info.md) for information about the datasets; [tsx_preprocess](sql/tsx_preprocessing.ipynb) and [tssl_preprocess](data/raw/threatened_species_state_lists.csv) for files cleaning and transforming the datasets; and [data_insertion](sql/data_insertion.ipynb) for actual data insertion into the database |
+| 5    | Real data integration - finding, cleaning and inserting data | see [data](data) for .csv files and [data_info](data/datasets_info.md) for information about the datasets; [tsx_preprocess](sql/tsx_preprocessing.ipynb) and [tssl_preprocess](sql/threatened_species_preprocessing.ipynb) for files cleaning and transforming the datasets; and [data_insertion](sql/data_insertion.ipynb) for actual data insertion into the database |
 | 6    | Feedback implementation, additional queries | [feedback](docs/feedback_implementation.md) [queries_week_6](sql/queries_week_6.ipynb)|
 
 ## Files
